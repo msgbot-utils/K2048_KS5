@@ -1,0 +1,119 @@
+function K2048(t, e, r, h, s) {
+  this.debugEnabled = !1, this.board = new Array(t).fill().map((e => new Array(t).fill(0))), this.score = 0, this.ended = !1, this.len = t, this.onEnded = e, this.beforePush = r, this.afterPush = h, this.targetRadix = isFinite(+s) && s > 2 ? +s : 11
+}
+K2048.prototype.generateNewNumber = function() {
+  let t = [];
+  if(this.board.forEach(((e, r) => e.forEach(((e, h) => e || t.push([r, h]))))), 0 == t.length) return !1;
+  const e = t[Math.floor(Math.random() * t.length)];
+  return this.board[e[0]][e[1]] = Math.floor(100 * Math.random()) < 30 ? 3 : 2, !0
+}, K2048.prototype.checkGameOver = function() {
+  let t = this.board.some((t => t.some((t => t >= this.targetRadix + 1))));
+  if((t || !this.canPush()) && (this.ended = !0, this.onEnded)) try {
+    this.onEnded(t)
+  }
+  catch (t) {}
+}, K2048.prototype.canPush = function() {
+  if(this.board.some((t => t.some((t => 0 == t))))) return {
+    horizontal: !0,
+    vertical: !0
+  };
+  let t = !1,
+    e = !1;
+  for(let e = 0; e < this.len; e++)
+    for(let r = 0; r < this.len - 1; e++)
+      if(this.board[e][r] == this.board[e][r + 1]) {
+        t = !0;
+        break
+      } for(let t = 0; t < this.len - 1; t++)
+    for(let r = 0; r < this.len; t++)
+      if(this.board[t][r] == this.board[t + 1][r]) {
+        e = !0;
+        break
+      } return {
+    horizontal: t,
+    vertical: e
+  }
+}, K2048.prototype.push = function(t) {
+  let e, r = this.board.map((t => t.map((t => [t, !1])))),
+    h = this.canPush();
+  switch(t) {
+    case "W":
+    case "w":
+      if(!h.vertical) return !1;
+      r = r.reverse(), e = (t, e) => e.reverse();
+      break;
+    case "S":
+    case "s":
+      if(!h.vertical) return !1;
+      e = (t, e) => e;
+      break;
+    case "A":
+    case "a":
+      if(!h.horizontal) return !1;
+      {
+        let t = [];
+        for(let e = 0; e < this.len; e++) {
+          let h = [];
+          for(let t = 0; t < this.len; t++) h.push(r[t][this.len - 1 - e]);
+          t.push(h)
+        }
+        r = t
+      }
+      e = (t, e) => {
+        let r = [];
+        for(let h = 0; h < t; h++) {
+          let s = [];
+          for(let r = 0; r < t; r++) s.push(e[t - 1 - r][h]);
+          r.push(s)
+        }
+        return r
+      };
+      break;
+    case "D":
+    case "d":
+      if(!h.horizontal) return !1;
+      {
+        let t = [];
+        for(let e = 0; e < this.len; e++) {
+          let h = [];
+          for(let t = 0; t < this.len; t++) h.push(r[t][e]);
+          t.push(h)
+        }
+        r = t
+      }
+      e = (t, e) => {
+        let r = [];
+        for(let h = 0; h < t; h++) {
+          let s = [];
+          for(let r = 0; r < t; r++) s.push(e[r][h]);
+          r.push(s)
+        }
+        return r
+      };
+      break;
+    default:
+      return !1
+  }
+  if(this.beforePush) {
+    try {
+      this.beforePush()
+    } catch (e) {}
+  }
+  for(let t = 0; t < this.len - 1; t++)
+    for(let t = 0; t < this.len; t++)
+      for(let e = this.len - 2; e >= 0; e--) {
+        let h = r[e][t],
+          s = r[e + 1][t];
+        0 == s[0] ? (r[e + 1][t][0] = r[e][t][0], r[e + 1][t][1] = r[e][t][1], r[e][t] = [0, !1]) : h[1] || h[1] || h[0] != s[0] || (r[e + 1][t][0]++, r[e + 1][t][1] = !0, r[e][t] = [0, !1])
+      }
+  if(this.board = e(this.len, r.map((t => t.map((t => t[0]))))), this.generateNewNumber(), this.afterPush) {
+    try {
+      this.afterPush()
+    } catch (e) {}
+  }
+  return this.checkGameOver(), !0
+}, K2048.prototype.toString = function(t, e, r) {
+  t = !1 !== t, r = !1 !== r;
+  let h = (((e = !!e) ? this.targetRadix : Math.pow(2, this.targetRadix)) + "").length;
+  return this.board.map((s => s.map((r => ((r ? e ? r : Math.pow(2, r - 1) : t ? "" : "0") + "")).padStart(h))).join(r ? " | " : " ")).join(r ? "\n" + "-".repeat(3 * (this.len - 1) + this.len * h) + "\n" : "\n")
+}, module.exports = K2048;
