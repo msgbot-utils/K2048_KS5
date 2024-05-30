@@ -8,7 +8,7 @@ KakaoTalk ver. 2048 & 오목
 # K2048
 *made by [semi703](https://github.com/semi703)(세미)*
 > ## 적용법
-> 1. modules/K2048([다운로드](https://downgit.github.io/#/home?url=https://github.com/msgbot-utils/K2048/tree/main/modules/K2048))을 받아서 **global_modules 폴더** 또는 **모듈을 사용할 봇 폴더의 modules 폴더** 에 넣기
+> 1. [modules/K2048.js](https://github.com/msgbot-utils/K2048_KS5/blob/main/modules/K2048.js)을 다운받아서 **global_modules 폴더** 또는 **모듈을 사용할 봇 폴더의 modules 폴더** 에 넣기
 > 
 > 2. [main.js](https://github.com/msgbot-utils/K2048/blob/main/main.js)의 내용을 **복사**해 봇에 **붙여넣기**
 >
