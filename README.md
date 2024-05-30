@@ -97,6 +97,16 @@ KakaoTalk ver. 2048 & 오목
 > `direction`: 밀고 합치는 방향입니다. w/a/s/d는 각각 위/왼쪽/아래/오른쪽으로 밀고 합칩니다. 다른 값은 무시합니다.
 > ##### 반환값
 > `isEnd`의 값이 true거나, 밀고 합쳐도 아무 변화가 없는 방향이라 무시되면 false를, 아니면 true를 반환합니다.
+> - - -
+> #### toString
+> ```javascript
+> toString(): string
+> ```
+> 게임판을 보기 좋은 문자열 형식으로 반환합니다.
+> ##### 매개변수
+> 없음
+> ##### 반환값
+> 매서드 설명과 동일
 # ~~K2048_window~~
 *made by [WindowsSystem32](https://github.com/WindowsSystem32)(윈도우)* <br />
 제작자가 완성을 안해 미완성 상태로 남아있습니다. <br />
