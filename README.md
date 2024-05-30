@@ -5,7 +5,7 @@ KakaoTalk ver. 2048 & 오목
 1. [K2048](#K2048)
 2. ~~[K2048_window](#K2048_window)~~
 3. ~~[KS5](#KS5)~~
-# [K2048](##목차)
+# K2048
 *made by [semi703](https://github.com/semi703)(세미)*
 > ## 적용법
 > 1. modules/K2048([다운로드](https://downgit.github.io/#/home?url=https://github.com/msgbot-utils/K2048/tree/main/modules/K2048))을 받아서 **global_modules 폴더** 또는 **모듈을 사용할 봇 폴더의 modules 폴더** 에 넣기
@@ -97,10 +97,10 @@ KakaoTalk ver. 2048 & 오목
 > `direction`: 밀고 합치는 방향입니다. w/a/s/d는 각각 위/왼쪽/아래/오른쪽으로 밀고 합칩니다. 다른 값은 무시합니다.
 > ##### 반환값
 > `isEnd`의 값이 true거나, 밀고 합쳐도 아무 변화가 없는 방향이라 무시되면 false를, 아니면 true를 반환합니다.
-# [~~K2048_window~~](##목차)
+# ~~K2048_window~~
 *made by [WindowsSystem32](https://github.com/WindowsSystem32)(윈도우)* <br />
 제작자가 완성을 안해 미완성 상태로 남아있습니다. <br />
 7~8월쯤에는 완성될수도?
-# [~~KS5~~](##목차)
+# ~~KS5~~
 *made by [semi703](https://github.com/semi703)(세미)* <br />
 오목이지만, 제작자가 버그 고치기 귀찮아서 방치해둔 상태입니다. 이후 시간이 남으면 새로 갈아엎을수도 있습니다.
