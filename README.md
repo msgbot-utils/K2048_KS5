@@ -18,6 +18,9 @@ KakaoTalk ver. 2048 & 오목
 > **;2048 시작** : 2048 게임을 시작합니다.
 > 
 > **w/a/s/d** : (게임 진행중) 위/왼쪽/아래/오른쪽으로 밉니다.
+<details>
+  <summary>모듈 클래스</summary>
+  
 
 > ## K2048 모듈
 > ### Import
@@ -107,6 +110,8 @@ KakaoTalk ver. 2048 & 오목
 > 없음
 > ##### 반환값
 > 매서드 설명과 동일
+</details>
+
 # ~~K2048_window~~
 *made by [WindowsSystem32](https://github.com/WindowsSystem32)(윈도우)* <br />
 제작자가 완성을 안해 미완성 상태로 남아있습니다. <br />
