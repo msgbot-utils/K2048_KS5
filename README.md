@@ -115,7 +115,7 @@ KakaoTalk ver. 2048 & 오목
 # ~~K2048_window~~
 *made by [WindowsSystem32](https://github.com/WindowsSystem32)(윈도우)* <br />
 제작자가 완성을 안해 미완성 상태로 남아있습니다. <br />
-7~8월쯤에는 완성될수도?
+아마 완성 안 할거 같아요.
 # ~~KS5~~
 *made by [semi703](https://github.com/semi703)(세미)* <br />
 오목이지만, 제작자가 버그 고치기 귀찮아서 방치해둔 상태입니다. 이후 시간이 남으면 새로 갈아엎을수도 있습니다.
